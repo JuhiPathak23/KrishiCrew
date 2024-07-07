@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Now</title>
+    <style>
+        /* Include the animations and styles from the index.html */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #1f1f1f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: white;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1f1f1f;
+            border-radius: 5px;
+            text-align: center;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .header {
+            font-size: 24px;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .input-group label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .btn-register, .btn-login {
+            background-color: yellow;
+            color: grey;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: slideIn 1s ease-in-out;
+            margin: 10px;
+        }
+
+        .btn-register:hover, .btn-login:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .signin-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            animation: slideIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Register Now</div>
+        <form action="/register" method="post">
+            <div class="input-group">
+                <label for="role">Select Role</label>
+                <select id="role" name="role" required>
+                    <option value="farmer">Farmer</option>
+                    <option value="government">Government</option>
+                    <option value="consumer">Consumer</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" required placeholder="Enter Email ID">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter Password">
+            </div>
+            <button class="btn-register" type="submit">Register</button>
+            <button class="btn-login" type="button" onclick="window.location.href='signin.html'">Back to Login</button>
+        </form>
+    </div>
+</body>
+</html>
