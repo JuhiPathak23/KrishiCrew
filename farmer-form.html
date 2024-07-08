@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Registration</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #1f1f1f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: white;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1f1f1f;
+            border-radius: 5px;
+            text-align: center;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .header {
+            font-size: 24px;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .input-group label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .btn-submit, .btn-back {
+            background-color: yellow;
+            color: grey;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: slideIn 1s ease-in-out;
+            margin: 10px;
+        }
+
+        .btn-submit:hover, .btn-back:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Farmer Details</div>
+        <form action="/submit-farmer" method="post">
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter Name">
+            </div>
+            <div class="input-group">
+                <label for="farm-size">Farm Size (in acres)</label>
+                <input type="number" id="farm-size" name="farm-size" required placeholder="Enter Farm Size">
+            </div>
+            <div class="input-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" required placeholder="Enter Location">
+            </div>
+            <div class="input-group">
+                <label for="crop-type">Crop Type</label>
+                <input type="text" id="crop-type" name="crop-type" required placeholder="Enter Crop Type">
+            </div>
+            <button class="btn-submit" type="submit">Submit</button>
+            <button class="btn-back" type="button" onclick="window.location.href='signin.html'">Back to Login</button>
+        </form>
+    </div>
+</body>
+</html>
